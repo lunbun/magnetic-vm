@@ -1,0 +1,5 @@
+add_subdirectory(cfg)
+add_subdirectory(types)
+add_subdirectory(codegen)
+add_subdirectory(compilation-unit)
+add_subdirectory(context)

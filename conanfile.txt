@@ -1,0 +1,12 @@
+[requires]
+fmt/8.1.1
+kuba-zip/0.2.2
+
+[generators]
+cmake_find_package
+CMakeToolchain
+
+[options]
+
+[imports]
+bin, *.dll -> ./bin
