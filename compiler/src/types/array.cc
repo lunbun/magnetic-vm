@@ -14,7 +14,7 @@ class ArrayInfoImpl : public IArrayInfo {
  public:
   Value EmitGetLength(llvm::IRBuilder<> &builder, Value array_ref) const override {
     assert(array_ref.type == Type::kObject);
-    builder.CreateLoad(this)
+    // builder.CreateLoad(this)
   }
 
   [[nodiscard]] Type element_type() const override { return this->element_type_; }

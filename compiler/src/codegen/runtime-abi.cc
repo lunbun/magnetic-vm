@@ -23,7 +23,7 @@ class DefaultRuntimeABI : public RuntimeABI {
     llvm::Module *module = builder.GetInsertBlock()->getModule();
     llvm::Function *getter = this->GetStringLiteralGetterInModule(module, value);
 
-    llvm::Value *string_literal = builder.CreateCall(getter, llvm::None, "string_literal");
+    llvm::Value *string_literal = builder.CreateCall(getter, std::nullopt, "string_literal");
     return {string_literal, Type::kObject};
   }
 
@@ -31,7 +31,7 @@ class DefaultRuntimeABI : public RuntimeABI {
   std::map<llvm::Module *, std::map<std::string, llvm::Function *, std::less<>>> string_literal_getters_;
 
   [[nodiscard]] llvm::FunctionType *getter_type() const {
-    return llvm::FunctionType::get(this->ctx()->ptr_type(), llvm::None, false);
+    return llvm::FunctionType::get(this->ctx()->ptr_type(), std::nullopt, false);
   }
 
   [[nodiscard]] llvm::FunctionCallee GetStringPoolLookupFunctionInModule(llvm::Module *module) const {

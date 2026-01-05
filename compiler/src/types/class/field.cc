@@ -138,7 +138,7 @@ class InstanceFieldDeclaration : public FieldDeclaration, public StructElementLa
     getter->addParamAttr(0, llvm::Attribute::NonNull);
     getter->addParamAttr(0, llvm::Attribute::NoUndef);
     getter->addParamAttr(0, llvm::Attribute::ReadOnly);
-    getter->addFnAttr(llvm::Attribute::ArgMemOnly);
+    // getter->addFnAttr(llvm::Attribute::ArgMemOnly);
     getter->addFnAttr(llvm::Attribute::AlwaysInline);
     getter->addFnAttr(llvm::Attribute::MustProgress);
     getter->addFnAttr(llvm::Attribute::NoFree);
@@ -146,7 +146,7 @@ class InstanceFieldDeclaration : public FieldDeclaration, public StructElementLa
     getter->addFnAttr(llvm::Attribute::NoSync);
     getter->addFnAttr(llvm::Attribute::NoUnwind);
     getter->addFnAttr(llvm::Attribute::WillReturn);
-    getter->addFnAttr(llvm::Attribute::ReadOnly);
+    // getter->addFnAttr(llvm::Attribute::ReadOnly);
 
     this->getters_.emplace(module, getter);
     return getter;
@@ -167,7 +167,7 @@ class InstanceFieldDeclaration : public FieldDeclaration, public StructElementLa
     setter->addParamAttr(0, llvm::Attribute::NoUndef);
     setter->addParamAttr(0, llvm::Attribute::WriteOnly);
     setter->addParamAttr(1, llvm::Attribute::NoUndef);
-    setter->addFnAttr(llvm::Attribute::ArgMemOnly);
+    // setter->addFnAttr(llvm::Attribute::ArgMemOnly);
     setter->addFnAttr(llvm::Attribute::AlwaysInline);
     setter->addFnAttr(llvm::Attribute::MustProgress);
     setter->addFnAttr(llvm::Attribute::NoFree);
@@ -175,7 +175,7 @@ class InstanceFieldDeclaration : public FieldDeclaration, public StructElementLa
     setter->addFnAttr(llvm::Attribute::NoSync);
     setter->addFnAttr(llvm::Attribute::NoUnwind);
     setter->addFnAttr(llvm::Attribute::WillReturn);
-    setter->addFnAttr(llvm::Attribute::WriteOnly);
+    // setter->addFnAttr(llvm::Attribute::WriteOnly);
 
     this->setters_.emplace(module, setter);
     return setter;

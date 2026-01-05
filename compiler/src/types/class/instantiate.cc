@@ -29,9 +29,7 @@ void ClassInstantiator::EmitDefinition(llvm::Module *module) {
   llvm::IntegerType *int_type = builder.getInt32Ty();
   llvm::Type *type = this->owner_->struct_type();
   llvm::Constant *malloc_size = llvm::ConstantInt::get(int_type, module->getDataLayout().getTypeAllocSize(type), true);
-  llvm::Value *ptr =
-      llvm::CallInst::CreateMalloc(builder.GetInsertBlock(), int_type, type, malloc_size, nullptr, nullptr, "");
-  builder.Insert(ptr);
+  llvm::Value *ptr = builder.CreateMalloc(int_type, type, malloc_size, nullptr, nullptr, "");
 
   llvm::Align align = module->getDataLayout().getABITypeAlign(type);
   builder.CreateMemSet(ptr, llvm::ConstantInt::get(builder.getInt8Ty(), 0, true), malloc_size, align);
@@ -42,7 +40,7 @@ void ClassInstantiator::EmitDefinition(llvm::Module *module) {
 }
 Value ClassInstantiator::EmitInstantiation(llvm::IRBuilder<> &builder, const std::string &name) {
   llvm::Function *function = this->GetInstantiatorInModule(builder.GetInsertBlock()->getModule());
-  llvm::CallInst *instance = builder.CreateCall(function, llvm::None, name);
+  llvm::CallInst *instance = builder.CreateCall(function, std::nullopt, name);
   return {instance, Type::kObject};
 }
 
@@ -50,13 +48,13 @@ llvm::Function *ClassInstantiator::GetInstantiatorInModule(llvm::Module *module)
   const auto &it = this->instantiators_.find(module);
   if (it != this->instantiators_.end()) return it->second;
 
-  llvm::FunctionType *function_type = llvm::FunctionType::get(this->ctx_->ptr_type(), llvm::None, false);
+  llvm::FunctionType *function_type = llvm::FunctionType::get(this->ctx_->ptr_type(), std::nullopt, false);
   llvm::Function *function =
       llvm::Function::Create(function_type, llvm::GlobalValue::ExternalLinkage, this->mangled_name_, *module);
   function->addRetAttr(llvm::Attribute::NoAlias);
   function->addRetAttr(llvm::Attribute::NoUndef);
   function->addFnAttr(llvm::Attribute::AlwaysInline);
-  function->addFnAttr(llvm::Attribute::InaccessibleMemOnly);
+  // function->addFnAttr(llvm::Attribute::InaccessibleMemOnly);
   function->addFnAttr(llvm::Attribute::MustProgress);
   function->addFnAttr(llvm::Attribute::NoFree);
   function->addFnAttr(llvm::Attribute::NoRecurse);

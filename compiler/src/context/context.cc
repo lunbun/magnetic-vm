@@ -20,7 +20,7 @@ namespace magnetic {
 
 Context::Context() : fields_(), methods_(), instantiators_(), single_unit_compilation_(false), global_unit_(nullptr) {
   this->ctx_ = std::make_unique<llvm::LLVMContext>();
-  this->ctx_->enableOpaquePointers();
+  this->ctx_->setOpaquePointers(true);
 
   this->i1_ = llvm::Type::getInt1Ty(*this->ctx_);
   this->i8_ = llvm::Type::getInt8Ty(*this->ctx_);
