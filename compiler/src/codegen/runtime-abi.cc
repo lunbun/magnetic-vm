@@ -7,7 +7,7 @@
 #include <functional>
 #include <map>
 
-#include "class/mangle.h"
+#include "types/mangle.h"
 #include "context/context.h"
 
 namespace magnetic {

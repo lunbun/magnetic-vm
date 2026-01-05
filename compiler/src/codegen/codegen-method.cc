@@ -7,7 +7,7 @@
 #include <fmt/core.h>
 #include <llvm/IR/BasicBlock.h>
 
-#include "class/descriptor.h"
+#include "types/class/descriptor.h"
 #include "environment.h"
 #include "instructions.h"
 #include "types/type.h"

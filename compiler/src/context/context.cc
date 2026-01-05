@@ -9,9 +9,9 @@
 #include <llvm/IR/DerivedTypes.h>
 #include <llvm/IR/LLVMContext.h>
 
-#include "class/class.h"
-#include "class/mangle.h"
-#include "class/pool/pool.h"
+#include "types/class/class.h"
+#include "types/mangle.h"
+#include "types/pool/pool.h"
 #include "codegen/runtime-abi.h"
 #include "compilation-unit/compilation-unit.h"
 #include "types/type.h"

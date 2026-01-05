@@ -7,7 +7,7 @@
 #include <cjbp/cjbp.h>
 #include <llvm/IR/IRBuilder.h>
 
-#include "class/class.h"
+#include "types/class/class.h"
 #include "compilation-unit/compilation-unit.h"
 
 namespace magnetic::codegen {

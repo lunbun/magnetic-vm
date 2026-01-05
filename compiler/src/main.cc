@@ -1,9 +1,9 @@
 #include <memory>
 
-#include "class/class.h"
-#include "class/mangle.h"
-#include "class/pool/path.h"
-#include "class/pool/pool.h"
+#include "types/class/class.h"
+#include "types/mangle.h"
+#include "types/pool/path.h"
+#include "types/pool/pool.h"
 #include "codegen/runtime-abi.h"
 #include "compilation-unit/compilation-unit.h"
 #include "context/context.h"

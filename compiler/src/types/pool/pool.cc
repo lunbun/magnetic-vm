@@ -8,7 +8,7 @@
 
 #include <cjbp/cjbp.h>
 
-#include "class/class.h"
+#include "types/class/class.h"
 #include "context/context.h"
 
 namespace magnetic {

@@ -9,7 +9,7 @@
 #include <llvm/IR/Verifier.h>
 #include <llvm/Passes/PassBuilder.h>
 
-#include "class/class.h"
+#include "types/class/class.h"
 #include "context/context.h"
 
 namespace magnetic {

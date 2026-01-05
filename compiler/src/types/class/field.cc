@@ -10,7 +10,7 @@
 
 #include <llvm/IR/GlobalVariable.h>
 
-#include "class/descriptor.h"
+#include "types/class/descriptor.h"
 #include "compilation-unit/compilation-unit.h"
 #include "context/context.h"
 #include "layout.h"

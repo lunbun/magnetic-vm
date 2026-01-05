@@ -9,7 +9,7 @@
 #include <cjbp/cjbp.h>
 #include <llvm/IR/Function.h>
 
-#include "class/descriptor.h"
+#include "types/class/descriptor.h"
 #include "codegen/codegen-method.h"
 #include "compilation-unit/compilation-unit.h"
 #include "context/context.h"

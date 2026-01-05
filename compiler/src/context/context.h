@@ -8,9 +8,9 @@
 
 #include <llvm/IR/LLVMContext.h>
 
-#include "class/field.h"
-#include "class/instantiate.h"
-#include "class/method.h"
+#include "types/class/field.h"
+#include "types/class/instantiate.h"
+#include "types/class/method.h"
 #include "types/type.h"
 
 namespace magnetic {

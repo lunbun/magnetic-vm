@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "class/class.h"
-#include "class/method.h"
+#include "types/class/class.h"
+#include "types/class/method.h"
 
 namespace magnetic::codegen {
 

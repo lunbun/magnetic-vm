@@ -12,7 +12,7 @@
 #include <cjbp/cjbp.h>
 
 #include "cfg/control-flow-graph.h"
-#include "class/method.h"
+#include "types/class/method.h"
 #include "context/context.h"
 #include "local-variables.h"
 #include "types/type.h"

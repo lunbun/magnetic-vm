@@ -11,11 +11,11 @@
 #include <fmt/core.h>
 #include <llvm/IR/Instructions.h>
 
-#include "class/class.h"
-#include "class/descriptor.h"
-#include "class/field.h"
-#include "class/instantiate.h"
-#include "class/method.h"
+#include "types/class/class.h"
+#include "types/class/descriptor.h"
+#include "types/class/field.h"
+#include "types/class/instantiate.h"
+#include "types/class/method.h"
 #include "compilation-unit/compilation-unit.h"
 #include "context/exception.h"
 #include "runtime-abi.h"
